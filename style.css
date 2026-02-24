@@ -1,0 +1,45 @@
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#0f0f0f,#16213e);
+    color:white;
+    text-align:center;
+}
+
+.container{
+    max-width:800px;
+    margin:auto;
+    padding:20px;
+}
+
+button{
+    padding:10px 20px;
+    margin:10px;
+    border:none;
+    cursor:pointer;
+    font-weight:bold;
+    background:#00ffcc;
+    color:black;
+}
+
+.option{
+    display:block;
+    background:#222;
+    color:white;
+    margin:8px 0;
+    padding:10px;
+}
+
+.timer{
+    font-size:22px;
+    color:#00ffcc;
+}
+
+.hidden{
+    display:none;
+}
+
+#ranking{
+    background:#222;
+    padding:15px;
+    margin-top:15px;
+}

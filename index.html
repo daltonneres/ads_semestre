@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Quiz - Quinta Geração</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+<h1>Quiz - Quinta Geração de Computadores</h1>
+
+<div id="start">
+    <button onclick="startQuiz()">Iniciar Quiz (5 minutos)</button>
+</div>
+
+<div id="quiz" class="hidden">
+    <div class="timer">Tempo: <span id="time">05:00</span></div>
+    <h3 id="question"></h3>
+    <div id="answers"></div>
+</div>
+
+<div id="result" class="hidden">
+    <h2>Resultado Final</h2>
+    <p id="score"></p>
+    <div id="ranking"></div>
+    <button onclick="location.reload()">Reiniciar</button>
+</div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
