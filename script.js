@@ -22,60 +22,60 @@ const db = getFirestore(app);
 
 const perguntas = {
 
-  1: [
-    { pergunta: "A 5ª geração surgiu oficialmente nos anos 1980 com foco em Inteligência Artificial.", tipo: "vf", correta: "Verdadeiro" },
-    { pergunta: "Qual é o principal foco da 5ª geração de computadores?", tipo: "multipla", alternativas: ["Inteligência Artificial e Processamento Paralelo", "Uso de válvulas", "Transistores isolados", "Cartões perfurados"], correta: "Inteligência Artificial e Processamento Paralelo" },
-    { pergunta: "A 5ª geração representa a era da IA, da conectividade global e da computação ubíqua.", tipo: "vf", correta: "Verdadeiro" },
-    { pergunta: "Um dos principais objetivos da 5ª geração é:", tipo: "multipla", alternativas: ["Fazer o computador aprender e reconhecer padrões", "Reduzir o uso de sistemas operacionais", "Eliminar a internet", "Voltar ao uso de válvulas"], correta: "Fazer o computador aprender e reconhecer padrões" },
-    { pergunta: "A integração de voz, linguagem natural e toques faz parte da 5ª geração.", tipo: "vf", correta: "Verdadeiro" },
-    { pergunta: "Quais tecnologias de hardware são intensamente utilizadas na 5ª geração?", tipo: "multipla", alternativas: ["LSI, VLSI e ULSI", "Válvulas térmicas", "Engrenagens mecânicas", "Apenas transistores simples"], correta: "LSI, VLSI e ULSI" },
-    { pergunta: "Processadores de 32 e 64 bits com múltiplos núcleos permitem processamento paralelo.", tipo: "vf", correta: "Verdadeiro" },
-    { pergunta: "Qual característica define os sistemas operacionais da 5ª geração?", tipo: "multipla", alternativas: ["Multitarefa", "Monotarefa", "Sem interface gráfica", "Baseados apenas em texto puro"], correta: "Multitarefa" },
-  ],
+1: [
+  { pergunta: "O Projeto Japonês da década de 1980 marcou oficialmente o início da 5ª geração de computadores.", tipo: "vf", correta: "Verdadeiro" },
+  { pergunta: "A principal mudança conceitual da 5ª geração foi:", tipo: "multipla", alternativas: ["Transformar o computador em um sistema capaz de aprender e decidir", "Aumentar o tamanho das máquinas", "Eliminar sistemas operacionais", "Voltar ao processamento mecânico"], correta: "Transformar o computador em um sistema capaz de aprender e decidir" },
+  { pergunta: "A computação ubíqua significa que os sistemas estão conectados e disponíveis em qualquer lugar.", tipo: "vf", correta: "Verdadeiro" },
+  { pergunta: "Um dos pilares da 5ª geração é a integração entre:", tipo: "multipla", alternativas: ["IA, processamento paralelo e interação natural", "Válvulas e cartões perfurados", "Fitas magnéticas e disquetes", "Somente hardware analógico"], correta: "IA, processamento paralelo e interação natural" },
+  { pergunta: "Na 5ª geração, o computador deixa de ser apenas executor de comandos.", tipo: "vf", correta: "Verdadeiro" },
+  { pergunta: "O avanço em LSI, VLSI e ULSI permitiu:", tipo: "multipla", alternativas: ["Milhões de componentes em um único chip", "Redução da capacidade de processamento", "Eliminação da memória", "Uso exclusivo de texto"], correta: "Milhões de componentes em um único chip" },
+  { pergunta: "O uso de múltiplos núcleos está ligado ao conceito de processamento paralelo.", tipo: "vf", correta: "Verdadeiro" },
+  { pergunta: "Os sistemas operacionais da 5ª geração são caracterizados principalmente por:", tipo: "multipla", alternativas: ["Gerenciamento simultâneo de múltiplos programas", "Funcionamento monotarefa", "Ausência de interface gráfica", "Dependência de papel"], correta: "Gerenciamento simultâneo de múltiplos programas" }
+],
 
-  2: [
-      { pergunta: "A 5ª geração é caracterizada por dispositivos portáteis poderosos como smartphones.", tipo: "vf", correta: "Verdadeiro" },
-      { pergunta: "O uso de SSDs com grande capacidade permite:", tipo: "multipla", alternativas: ["Trabalhar com grandes volumes de dados", "Reduzir a conectividade", "Eliminar sistemas multitarefa", "Substituir IA"], correta: "Trabalhar com grandes volumes de dados" },
-      { pergunta: "Interfaces gráficas com janelas e ícones tornaram os sistemas mais acessíveis.", tipo: "vf", correta: "Verdadeiro" },
-      { pergunta: "Qual destas opções é um desafio da 5ª geração?", tipo: "multipla", alternativas: ["Privacidade e vieses algorítmicos", "Falta de energia elétrica mundial", "Ausência de chips", "Uso de papel para armazenamento"], correta: "Privacidade e vieses algorítmicos" },
-      { pergunta: "A IA é considerada o 'cérebro' da 5ª geração.", tipo: "vf", correta: "Verdadeiro" },
-      { pergunta: "O processamento paralelo permite:", tipo: "multipla", alternativas: ["Executar várias tarefas simultaneamente", "Executar apenas uma tarefa por vez", "Eliminar memória RAM", "Substituir a internet"], correta: "Executar várias tarefas simultaneamente" },
-      { pergunta: "Big Data permite analisar enormes volumes de dados.", tipo: "vf", correta: "Verdadeiro" },
-      { pergunta: "A miniaturização permitiu transformar PCs grandes em:", tipo: "multipla", alternativas: ["Laptops e smartphones", "Máquinas maiores", "Computadores mecânicos", "Dispositivos analógicos"], correta: "Laptops e smartphones" }
-    ],
+2: [
+  { pergunta: "A 5ª geração popularizou dispositivos compactos com alto poder de processamento.", tipo: "vf", correta: "Verdadeiro" },
+  { pergunta: "A ampliação da capacidade de SSDs impacta principalmente:", tipo: "multipla", alternativas: ["Análise de grandes volumes de dados", "Redução da internet", "Fim do multitarefa", "Substituição da IA"], correta: "Análise de grandes volumes de dados" },
+  { pergunta: "Interfaces gráficas ampliaram o acesso de usuários não técnicos à computação.", tipo: "vf", correta: "Verdadeiro" },
+  { pergunta: "Qual fator é considerado um desafio atual da 5ª geração?", tipo: "multipla", alternativas: ["Vieses algorítmicos e privacidade de dados", "Falta de energia mundial", "Desuso da internet", "Retorno às válvulas"], correta: "Vieses algorítmicos e privacidade de dados" },
+  { pergunta: "A IA é vista como elemento central que permite decisões automatizadas.", tipo: "vf", correta: "Verdadeiro" },
+  { pergunta: "O processamento paralelo permite ao sistema:", tipo: "multipla", alternativas: ["Executar várias tarefas ao mesmo tempo", "Executar apenas uma instrução por vez", "Eliminar o uso de RAM", "Substituir redes"], correta: "Executar várias tarefas ao mesmo tempo" },
+  { pergunta: "Big Data está relacionado à capacidade de extrair insights de grandes volumes de informação.", tipo: "vf", correta: "Verdadeiro" },
+  { pergunta: "A miniaturização transformou computadores tradicionais em:", tipo: "multipla", alternativas: ["Dispositivos móveis poderosos", "Equipamentos maiores", "Máquinas mecânicas", "Dispositivos analógicos"], correta: "Dispositivos móveis poderosos" }
+],
 
-  3: [
-      { pergunta: "A conectividade constante é uma marca da 5ª geração.", tipo: "vf", correta: "Verdadeiro" },
-      { pergunta: "Modelos como SaaS e streaming surgem com a expansão:", tipo: "multipla", alternativas: ["Da internet", "Das válvulas", "Dos cartões perfurados", "Dos disquetes"], correta: "Da internet" },
-      { pergunta: "A 5ª geração prioriza alto desempenho em espaço físico reduzido.", tipo: "vf", correta: "Verdadeiro" },
-      { pergunta: "Qual destes está associado à continuidade tecnológica da 5ª geração?", tipo: "multipla", alternativas: ["Computação quântica", "Máquinas a vapor", "Válvulas gigantes", "Fitas magnéticas antigas"], correta: "Computação quântica" },
-      { pergunta: "A demanda por hardware mais potente pressiona por eficiência energética.", tipo: "vf", correta: "Verdadeiro" },
-      { pergunta: "A interação natural inclui:", tipo: "multipla", alternativas: ["Reconhecimento de voz e linguagem natural", "Cartões perfurados", "Comandos mecânicos", "Alavancas manuais"], correta: "Reconhecimento de voz e linguagem natural" },
-      { pergunta: "A 5ª geração busca automatizar tarefas complexas com IA.", tipo: "vf", correta: "Verdadeiro" },
-      { pergunta: "O crescimento do mercado global de IA citado no PDF demonstra:", tipo: "multipla", alternativas: ["Expansão acelerada de infraestrutura e serviços", "Declínio da tecnologia", "Fim da computação", "Redução de investimentos"], correta: "Expansão acelerada de infraestrutura e serviços" }
-    ],
+3: [
+  { pergunta: "A conectividade constante tornou-se elemento central da 5ª geração.", tipo: "vf", correta: "Verdadeiro" },
+  { pergunta: "Modelos como SaaS e streaming tornaram-se viáveis graças à expansão:", tipo: "multipla", alternativas: ["Da internet e das redes globais", "Das válvulas térmicas", "Dos disquetes", "Dos cartões perfurados"], correta: "Da internet e das redes globais" },
+  { pergunta: "A 5ª geração combina alto desempenho com redução de tamanho físico.", tipo: "vf", correta: "Verdadeiro" },
+  { pergunta: "Qual tecnologia representa possível continuidade evolutiva dessa geração?", tipo: "multipla", alternativas: ["Computação quântica", "Máquinas a vapor", "Fitas perfuradas", "Relés eletromecânicos"], correta: "Computação quântica" },
+  { pergunta: "A busca por eficiência energética é consequência do aumento da demanda por processamento.", tipo: "vf", correta: "Verdadeiro" },
+  { pergunta: "A interação natural envolve principalmente:", tipo: "multipla", alternativas: ["Reconhecimento de voz e linguagem natural", "Cartões perfurados", "Alavancas mecânicas", "Somente teclado físico"], correta: "Reconhecimento de voz e linguagem natural" },
+  { pergunta: "A IA permite automatizar tarefas complexas anteriormente feitas por humanos.", tipo: "vf", correta: "Verdadeiro" },
+  { pergunta: "O crescimento do mercado de IA demonstra:", tipo: "multipla", alternativas: ["Expansão acelerada da tecnologia e dos investimentos", "Declínio da computação", "Redução de infraestrutura", "Fim do desenvolvimento tecnológico"], correta: "Expansão acelerada da tecnologia e dos investimentos" }
+],
 
-  4: [
-      { pergunta: "A 5ª geração vai dos PCs avançados dos anos 80/90 até os sistemas em nuvem atuais.", tipo: "vf", correta: "Verdadeiro" },
-      { pergunta: "O uso massivo de dados levanta preocupações com:", tipo: "multipla", alternativas: ["Ética e segurança da informação", "Falta de monitores", "Ausência de teclado", "Redução de memória RAM"], correta: "Ética e segurança da informação" },
-      { pergunta: "Processadores de 64 bits são comuns na 5ª geração.", tipo: "vf", correta: "Verdadeiro" },
-      { pergunta: "Qual característica diferencia fortemente a 5ª geração das anteriores?", tipo: "multipla", alternativas: ["Capacidade de aprender e reconhecer padrões", "Uso de válvulas", "Dependência de cartões", "Processamento mecânico"], correta: "Capacidade de aprender e reconhecer padrões" },
-      { pergunta: "A empregabilidade na área de IA teve aumento expressivo segundo o PDF.", tipo: "vf", correta: "Verdadeiro" },
-      { pergunta: "A miniaturização impactou principalmente:", tipo: "multipla", alternativas: ["Portabilidade e eficiência energética", "Aumento do tamanho físico", "Uso de papel", "Redução da conectividade"], correta: "Portabilidade e eficiência energética" },
-      { pergunta: "A 5ª geração não depende de conectividade em rede.", tipo: "vf", correta: "Falso" },
-      { pergunta: "O principal marco conceitual da 5ª geração é:", tipo: "multipla", alternativas: ["Inteligência Artificial moldando o futuro", "Retorno às válvulas", "Fim da internet", "Computação exclusivamente mecânica"], correta: "Inteligência Artificial moldando o futuro" }
-    ],
+4: [
+  { pergunta: "A 5ª geração abrange desde PCs avançados até sistemas baseados em nuvem atuais.", tipo: "vf", correta: "Verdadeiro" },
+  { pergunta: "O uso massivo de dados exige atenção especial à:", tipo: "multipla", alternativas: ["Segurança, ética e privacidade", "Falta de teclado", "Ausência de monitores", "Redução de RAM"], correta: "Segurança, ética e privacidade" },
+  { pergunta: "Processadores de 64 bits são comuns nessa geração.", tipo: "vf", correta: "Verdadeiro" },
+  { pergunta: "O diferencial central da 5ª geração em relação às anteriores é:", tipo: "multipla", alternativas: ["Capacidade de aprendizado e reconhecimento de padrões", "Uso de válvulas", "Dependência de papel", "Processamento mecânico"], correta: "Capacidade de aprendizado e reconhecimento de padrões" },
+  { pergunta: "A expansão da IA impactou significativamente o mercado de trabalho.", tipo: "vf", correta: "Verdadeiro" },
+  { pergunta: "A miniaturização contribuiu principalmente para:", tipo: "multipla", alternativas: ["Portabilidade e eficiência energética", "Aumento do tamanho físico", "Redução da conectividade", "Uso de papel"], correta: "Portabilidade e eficiência energética" },
+  { pergunta: "A conectividade em rede é essencial para a 5ª geração.", tipo: "vf", correta: "Verdadeiro" },
+  { pergunta: "A 5ª geração pode ser definida como:", tipo: "multipla", alternativas: ["A era da inteligência artificial e da conectividade total", "O retorno às válvulas", "O fim da internet", "A computação mecânica moderna"], correta: "A era da inteligência artificial e da conectividade total" }
+],
 
-  6: [
-    { pergunta: "HDs e SSDs com centenas de GB ou mais possibilitam trabalhar com grandes volumes de dados.", tipo: "vf", correta: "Verdadeiro" },
-    { pergunta: "A internet na 5ª geração:", tipo: "multipla", alternativas: ["É o centro da experiência e conecta tudo em tempo real", "É inexistente", "É usada apenas para e-mails internos", "Não influencia o funcionamento dos sistemas"], correta: "É o centro da experiência e conecta tudo em tempo real" },
-    { pergunta: "Big Data e computação em nuvem são tecnologias associadas à 5ª geração.", tipo: "vf", correta: "Verdadeiro" },
-    { pergunta: "Qual foi o impacto da IA no PIB da China segundo o PDF?", tipo: "multipla", alternativas: ["+26.1%", "+10%", "+5.5%", "+50%"], correta: "+26.1%" },
-    { pergunta: "A busca por profissionais de IA no Brasil aumentou +306%.", tipo: "vf", correta: "Verdadeiro" },
-    { pergunta: "O mercado global de IA citado no PDF é de aproximadamente:", tipo: "multipla", alternativas: ["US$ 312 bilhões", "US$ 50 bilhões", "US$ 1 trilhão", "US$ 100 milhões"], correta: "US$ 312 bilhões" },
-    { pergunta: "Miniaturização e portabilidade são marcas da 5ª geração.", tipo: "vf", correta: "Verdadeiro" },
-    { pergunta: "Qual é um dos principais desafios da 5ª geração?", tipo: "multipla", alternativas: ["Privacidade, ética e segurança da informação", "Falta de eletricidade", "Ausência de internet", "Uso de cartões perfurados"], correta: "Privacidade, ética e segurança da informação" }
-  ], 
+6: [
+  { pergunta: "Armazenamentos com centenas de GB viabilizam aplicações baseadas em grandes dados.", tipo: "vf", correta: "Verdadeiro" },
+  { pergunta: "Na 5ª geração, a internet é considerada:", tipo: "multipla", alternativas: ["Elemento central da experiência computacional", "Recurso secundário", "Inexistente", "Irrelevante para sistemas"], correta: "Elemento central da experiência computacional" },
+  { pergunta: "Big Data e computação em nuvem são pilares tecnológicos associados à 5ª geração.", tipo: "vf", correta: "Verdadeiro" },
+  { pergunta: "Segundo os dados apresentados, a IA impactou o PIB da China em aproximadamente:", tipo: "multipla", alternativas: ["+26.1%", "+10%", "+5%", "+50%"], correta: "+26.1%" },
+  { pergunta: "A demanda por profissionais de IA no Brasil teve crescimento superior a 300%.", tipo: "vf", correta: "Verdadeiro" },
+  { pergunta: "O mercado global de IA citado apresenta valor aproximado de:", tipo: "multipla", alternativas: ["US$ 312 bilhões", "US$ 50 bilhões", "US$ 1 trilhão", "US$ 100 milhões"], correta: "US$ 312 bilhões" },
+  { pergunta: "Miniaturização e alto desempenho caminham juntos na 5ª geração.", tipo: "vf", correta: "Verdadeiro" },
+  { pergunta: "Entre os principais desafios atuais está:", tipo: "multipla", alternativas: ["Garantir ética, privacidade e segurança da informação", "Falta de eletricidade", "Ausência de internet", "Uso de cartões perfurados"], correta: "Garantir ética, privacidade e segurança da informação" }
+], 
 
   5: [
     { pergunta: "HDs e SSDs com centenas de GB ou mais possibilitam trabalhar com grandes volumes de dados.", tipo: "vf", correta: "Verdadeiro" },
