@@ -75,6 +75,17 @@ const perguntas = {
     { pergunta: "O mercado global de IA citado no PDF é de aproximadamente:", tipo: "multipla", alternativas: ["US$ 312 bilhões", "US$ 50 bilhões", "US$ 1 trilhão", "US$ 100 milhões"], correta: "US$ 312 bilhões" },
     { pergunta: "Miniaturização e portabilidade são marcas da 5ª geração.", tipo: "vf", correta: "Verdadeiro" },
     { pergunta: "Qual é um dos principais desafios da 5ª geração?", tipo: "multipla", alternativas: ["Privacidade, ética e segurança da informação", "Falta de eletricidade", "Ausência de internet", "Uso de cartões perfurados"], correta: "Privacidade, ética e segurança da informação" }
+  ], 
+
+  5: [
+    { pergunta: "HDs e SSDs com centenas de GB ou mais possibilitam trabalhar com grandes volumes de dados.", tipo: "vf", correta: "Verdadeiro" },
+    { pergunta: "A internet na 5ª geração:", tipo: "multipla", alternativas: ["É o centro da experiência e conecta tudo em tempo real", "É inexistente", "É usada apenas para e-mails internos", "Não influencia o funcionamento dos sistemas"], correta: "É o centro da experiência e conecta tudo em tempo real" },
+    { pergunta: "Big Data e computação em nuvem são tecnologias associadas à 5ª geração.", tipo: "vf", correta: "Verdadeiro" },
+    { pergunta: "Qual foi o impacto da IA no PIB da China segundo o PDF?", tipo: "multipla", alternativas: ["+26.1%", "+10%", "+5.5%", "+50%"], correta: "+26.1%" },
+    { pergunta: "A busca por profissionais de IA no Brasil aumentou +306%.", tipo: "vf", correta: "Verdadeiro" },
+    { pergunta: "O mercado global de IA citado no PDF é de aproximadamente:", tipo: "multipla", alternativas: ["US$ 312 bilhões", "US$ 50 bilhões", "US$ 1 trilhão", "US$ 100 milhões"], correta: "US$ 312 bilhões" },
+    { pergunta: "Miniaturização e portabilidade são marcas da 5ª geração.", tipo: "vf", correta: "Verdadeiro" },
+    { pergunta: "Qual é um dos principais desafios da 5ª geração?", tipo: "multipla", alternativas: ["Privacidade, ética e segurança da informação", "Falta de eletricidade", "Ausência de internet", "Uso de cartões perfurados"], correta: "Privacidade, ética e segurança da informação" }
   ]
 
 };
@@ -127,6 +138,7 @@ const tempoElemento = document.getElementById("tempo");
 
 tempoElemento.innerText=
 `${m<10?"0":""}${m}:${s<10?"0":""}${s}`;
+
 
 // efeito visual pulsante
 tempoElemento.style.transform="scale(1.1)";
