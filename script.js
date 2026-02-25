@@ -100,31 +100,44 @@ let acertos=0;
 
 window.iniciarQuiz = async function(g){
 
-// 🔍 Verifica no Firestore se já existe resultado dessa geração
-const q = query(
-collection(db,"ranking"),
-where("geracao","==",g)
-);
+  // 🔐 Proteção da Geração 5 - ADMIN
+  if(g === 5){
+    const senha = prompt("🔒 Área restrita - Digite a senha:");
 
-const snapshot = await getDocs(q);
+    if(senha !== "admin123"){ // troque pela sua senha
+      alert("❌ Senha incorreta!");
+      return;
+    }
 
-if(!snapshot.empty){
-alert("⚠ Esta geração já realizou o quiz! Não é permitido repetir.");
-return;
-}
+    abrirPainelAdmin();
+    return;
+  }
 
-// Se não existir registro, permite iniciar
-geracao=g;
-lista=perguntas[g];
-respostas=[];
-atual=0;
-tempo=150;
+  // 🔍 Verifica no Firestore se já existe resultado dessa geração
+  const q = query(
+    collection(db,"ranking"),
+    where("geracao","==",g)
+  );
 
-document.getElementById("inicio").classList.add("hidden");
-document.getElementById("quiz").classList.remove("hidden");
+  const snapshot = await getDocs(q);
 
-iniciarTimer();
-carregar();
+  if(!snapshot.empty){
+    alert("⚠ Esta geração já realizou o quiz! Não é permitido repetir.");
+    return;
+  }
+
+  // Se não existir registro, permite iniciar
+  geracao=g;
+  lista=perguntas[g];
+  respostas=[];
+  atual=0;
+  tempo=150;
+
+  document.getElementById("inicio").classList.add("hidden");
+  document.getElementById("quiz").classList.remove("hidden");
+
+  iniciarTimer();
+  carregar();
 }
 
 function iniciarTimer(){
@@ -218,27 +231,32 @@ window.respostaModal = function(resposta){
 
 async function finalizar(){
 
-clearInterval(timer);
-acertos=0;
+  clearInterval(timer);
+  acertos=0;
 
-lista.forEach((p,i)=>{
-if(respostas[i]===p.correta) acertos++;
-});
+  lista.forEach((p,i)=>{
+    if(respostas[i]===p.correta) acertos++;
+  });
 
-await addDoc(collection(db,"ranking"),{
-geracao,
-pontuacao:acertos,
-tempoRestante: tempo < 0 ? 0 : tempo,
-data:new Date()
-});
+  // 🚫 Não salva geração 5 no ranking
+  if(geracao !== 5){
+    await addDoc(collection(db,"ranking"),{
+      geracao,
+      pontuacao:acertos,
+      tempoRestante: tempo < 0 ? 0 : tempo,
+      data:new Date()
+    });
+  }
 
-mostrarResultado();
+  mostrarResultado();
 }
 
 async function mostrarResultado(){
 
 document.getElementById("quiz").classList.add("hidden");
 document.getElementById("resultado").classList.remove("hidden");
+
+document.querySelector("#resultado h2").innerText = "Ranking Geral";
 
 document.getElementById("pontuacao").innerText=
 `Você acertou ${acertos} de 8 questões!`;
@@ -298,4 +316,53 @@ origin: { y: 0.6 }
 
 window.voltar=function(){
 location.reload();
+}
+
+async function abrirPainelAdmin(){
+
+  document.getElementById("inicio").classList.add("hidden");
+  document.getElementById("quiz").classList.add("hidden");
+  document.getElementById("resultado").classList.remove("hidden");
+  document.querySelector("#resultado h2").innerText = "Ranking Geral";
+
+  let dados = await getDocs(collection(db,"ranking"));
+  let listaRank = [];
+
+  dados.forEach(d => {
+    const data = d.data();
+
+    // 🚫 Não mostra geração 5 no ranking
+    if(data.geracao !== 5){
+      listaRank.push(data);
+    }
+  });
+
+  listaRank.sort((a,b)=>{
+    if(b.pontuacao !== a.pontuacao){
+      return b.pontuacao - a.pontuacao;
+    }
+    return b.tempoRestante - a.tempoRestante;
+  });
+
+  let div=document.getElementById("ranking");
+div.innerHTML="";
+  listaRank.forEach((r,i)=>{
+
+    let medalha="";
+    if(i===0) medalha="🥇";
+    else if(i===1) medalha="🥈";
+    else if(i===2) medalha="🥉";
+
+    div.innerHTML+=`
+    <div class="card-ranking">
+      <span class="posicao">${i+1}º</span>
+      <span class="medalha">${medalha}</span>
+      <span class="geracao">Geração ${r.geracao}</span>
+      <span class="info">
+        ${r.pontuacao} acertos | ${r.tempoRestante}s restantes
+      </span>
+    </div>
+    `;
+  });
+
 }
