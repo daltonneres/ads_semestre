@@ -2,34 +2,40 @@
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
-<title>Quiz - Quinta Geração</title>
+<title>Quiz - Gerações</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="container">
 
-<h1>Quiz - Quinta Geração de Computadores</h1>
+<h1>QUIZ - Gerações de Computadores</h1>
 
-<div id="start">
-    <button onclick="startQuiz()">Iniciar Quiz (5 minutos)</button>
+<div id="inicio">
+<h3>Escolha sua geração</h3>
+<button onclick="iniciarQuiz(1)">1ª Geração</button>
+<button onclick="iniciarQuiz(2)">2ª Geração</button>
+<button onclick="iniciarQuiz(3)">3ª Geração</button>
+<button onclick="iniciarQuiz(4)">4ª Geração</button>
+<button onclick="iniciarQuiz(6)">6ª Geração</button>
 </div>
 
 <div id="quiz" class="hidden">
-    <div class="timer">Tempo: <span id="time">05:00</span></div>
-    <h3 id="question"></h3>
-    <div id="answers"></div>
+<div class="timer">Tempo: <span id="tempo">04:00</span></div>
+<h3 id="pergunta"></h3>
+<div id="alternativas"></div>
 </div>
 
-<div id="result" class="hidden">
-    <h2>Resultado Final</h2>
-    <p id="score"></p>
-    <div id="ranking"></div>
-    <button onclick="location.reload()">Reiniciar</button>
+<div id="resultado" class="hidden">
+<h2>Resultado Final</h2>
+<p id="pontuacao"></p>
+<div id="ranking"></div>
+<button onclick="voltar()">Voltar</button>
 </div>
 
 </div>
 
-<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script type="module" src="script.js"></script>
 </body>
 </html>
