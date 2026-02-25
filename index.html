@@ -27,7 +27,7 @@
 </div>
 
 <div id="quiz" class="hidden">
-<div class="timer">Tempo: <span id="tempo">04:00</span></div>
+<div class="timer">Tempo: <span id="tempo">02:30</span></div>
 <h3 id="pergunta"></h3>
 <div id="alternativas"></div>
 </div>
@@ -49,6 +49,16 @@
 
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 <script type="module" src="script.js"></script>
+
+<div id="modalConfirm" class="modal hidden">
+  <div class="modal-box">
+    <p id="modalTexto"></p>
+    <div class="modal-botoes">
+      <button onclick="respostaModal(true)">Sim</button>
+      <button onclick="respostaModal(false)">Não</button>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>

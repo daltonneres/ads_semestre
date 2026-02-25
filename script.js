@@ -83,7 +83,7 @@ let geracao;
 let lista=[];
 let respostas=[];
 let atual=0;
-let tempo=240;
+let tempo=150;
 let timer;
 let acertos=0;
 
@@ -107,7 +107,7 @@ geracao=g;
 lista=perguntas[g];
 respostas=[];
 atual=0;
-tempo=240;
+tempo=150;
 
 document.getElementById("inicio").classList.add("hidden");
 document.getElementById("quiz").classList.remove("hidden");
@@ -173,20 +173,35 @@ document.getElementById("alternativas").appendChild(b);
 }
 
 function confirmar(resp){
-if(confirm("Tem certeza que deseja confirmar essa resposta?")){
-respostas[atual]=resp;
+respostas[atual] = resp;
 atual++;
 carregar();
 }
-}
+
+let acaoConfirmacao = null;
 
 function revisar(){
-if(confirm("Deseja revisar suas respostas?")){
-atual=0;
-carregar();
-}else{
-finalizar();
+  abrirModal("Deseja revisar suas respostas?", (resposta)=>{
+    if(resposta){
+      atual = 0;
+      carregar();
+    } else {
+      finalizar();
+    }
+  });
 }
+
+function abrirModal(texto, callback){
+  document.getElementById("modalTexto").innerText = texto;
+  document.getElementById("modalConfirm").classList.remove("hidden");
+  acaoConfirmacao = callback;
+}
+
+window.respostaModal = function(resposta){
+  document.getElementById("modalConfirm").classList.add("hidden");
+  if(acaoConfirmacao){
+    acaoConfirmacao(resposta);
+  }
 }
 
 async function finalizar(){
