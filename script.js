@@ -104,7 +104,7 @@ window.iniciarQuiz = async function(g){
   if(g === 5){
     const senha = prompt("🔒 Área restrita - Digite a senha:");
 
-    if(senha !== "admin123"){ // troque pela sua senha
+    if(senha !== "dalton.neres@unisep"){
       alert("❌ Senha incorreta!");
       return;
     }
